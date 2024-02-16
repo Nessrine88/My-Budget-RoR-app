@@ -9,7 +9,7 @@ end
 
 RSpec.feature 'Entities', type: :feature do
   before do
-    user = create(:user)
+    create(:user)
   end
 
   scenario 'User views entities in a group' do

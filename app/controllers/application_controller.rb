@@ -15,6 +15,6 @@ class ApplicationController < ActionController::Base
   helper_method :total_amount
 
   def total_amount(entities)
-    entities.sum { |entity| entity.amount }
+    entities.sum(&:amount)
   end
 end
