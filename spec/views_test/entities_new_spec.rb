@@ -1,5 +1,3 @@
-# spec/features/entities_spec.rb
-
 require 'rails_helper'
 
 RSpec.configure do |config|
@@ -13,18 +11,12 @@ RSpec.feature 'Entities', type: :feature do
   end
 
   scenario 'User views entities in a group' do
-    # Create a user and log in
     user = create(:user)
     login_as(user, scope: :user)
 
-    # Create a group and entities associated with the user
     group = create(:group, user:)
     entities = create_list(:entity, 3, group:, user:)
-
-    # Visit the entities page
     visit group_entities_path(group)
-
-    # Verify the presence of elements
     expect(page).to have_content('Back to Categories')
 
     if entities.any?

@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :group do
-    name { 'Example Group' }
-    icon { 'group_icon.jpg' }
+    name { Faker::Lorem.word }
+    icon { Faker::Internet.url }
     user
   end
 end
