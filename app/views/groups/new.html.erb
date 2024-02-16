@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <%= form_with(model: @group) do |form| %>
+    <% if @group.errors.any? %>
+      <div class="alert alert-danger">
+        <h4><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h4>
+        <ul>
+          <% @group.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :icon_url, class: 'form-label' %>
+      <%= form.text_field :icon, class: 'form-control', required: true %>
+    </div>
+
+    <div class="but">
+      <%= form.submit "Create Group", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

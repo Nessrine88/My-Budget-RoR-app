@@ -1,0 +1,36 @@
+<% if user_signed_in? %>
+<div class="navBar d-flex justify-content-between">
+  <div>
+    <h3>
+      <% if defined?(@group) && @group.present? %>
+        <%= @group.name %> <br>
+      <% elsif request.path == groups_path %>
+        Categories
+      <% elsif defined?(@entity) && @entity.present? %>
+        <%= @entity.name %>
+      <% else %>
+      <% end %>
+    </h3>
+  </div>
+
+  <div>
+    <span class="menu-icon" onclick="toggleMenu()">☰</span>
+    <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: 'logout', id: 'logoutButton') %>
+  </div>
+</div>
+
+<script>
+  function toggleMenu() {
+    var menuIcon = document.querySelector('.menu-icon');
+    var logoutButton = document.getElementById('logoutButton');
+
+    if (menuIcon.style.display === 'none') {
+      menuIcon.style.display = 'inline-block';
+      logoutButton.style.display = 'none';
+    } else {
+      menuIcon.style.display = 'none';
+      logoutButton.style.display = 'inline-block';
+    }
+  }
+</script>
+<% end %>

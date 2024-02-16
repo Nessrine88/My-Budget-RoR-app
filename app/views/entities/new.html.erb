@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <%= form_with(model: [@group, @entity], local: true) do |form| %>
+    <% if @entity.errors.any? %>
+      <div class="alert alert-danger">
+        <h4><%= pluralize(@entity.errors.count, "error") %> prohibited this entity from being saved:</h4>
+        <ul>
+          <% @entity.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control', required: true %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :amount, class: 'form-label' %>
+      <%= form.number_field :amount, class: 'form-control', required: true %>
+    </div>
+
+    <div class="but">
+      <%= form.submit "Create Entity", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

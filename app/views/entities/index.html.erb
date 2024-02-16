@@ -1,0 +1,31 @@
+<div class="p-2 mt-4">
+  
+<%= link_to groups_path, class: "back-link" do %>
+  <i class="fas fa-arrow-left"></i> Back to Categories
+<% end %>
+
+  <% if @entities.any? %>
+    <ul class="list-group">
+      <li class="table-bordered p-4" align="center">Total amount: <%=@total_amount%></li>
+
+      <% @entities.each do |entity| %>
+        <div class="d-flex justify-content-between mt-2 p-2 table-bordered list">
+          <div>
+            <li>
+              <%= entity.name %>
+              <li> <%= entity.created_at %></li>
+            </li>
+          </div>
+          <li> <%= entity.amount %>$</li>
+        </div>
+      <% end %>
+    </ul>
+  <% else %>
+  <p style="color: #555;font-size:2em; font-style: italic; text-align: center; margin-top:5rem;">No entities in this group yet.</p>
+
+  <% end %>
+
+  <div class="but">
+    <%= link_to "Add New", new_group_entity_path(@group) %>
+  </div>
+</div>

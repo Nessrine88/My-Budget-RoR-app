@@ -1,15 +1,114 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+.but {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #5fb523;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.but a {
+  color: white;
+  border: 1px solid white;
+  padding: 1rem 5rem;
+}
+
+.p-2 {
+  margin-bottom: 50px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 5s ease-in-out;
+}
+
+body {
+  background-color: #e7e7e7;
+  font-family: 'Proxima Vera Bold', sans-serif;
+}
+
+.list-group li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.list {
+  background-color: #fff;
+}
+
+.but input {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 1rem 5rem;
+}
+
+.home {
+  position: relative;
+  font-size: 4em;
+  color: #0e3742;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+  line-height: 0.7em;
+  outline: none;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0%,
+  18%,
+  20%,
+  50.1%,
+  60%,
+  65.1%,
+  80%,
+  90.1%,
+  92% {
+    color: #fff;
+    text-shadow:
+      0 0 10px #03bcf4
+      0 0 20px #03bcf4
+      0 0 40px #03bcf4
+      0 0 80px #03bcf4
+      0 0 160px #03bcf4;
+  }
+}
+
+h3 {
+  color: white;
+}
+
+.navBar {
+  background-color: #3778c2;
+  padding: 2rem;
+}
+
+.navBar button {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+  display: none; /* Hide the logout button initially */
+}
+
+.menu-icon {
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
