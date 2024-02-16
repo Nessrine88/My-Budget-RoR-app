@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+<div class="pl-2">
+<%= paginate @groups %>
+</div>
+<div id="groups"class="p-2">
+  <% @groups.each do |group| %>
+    <%= render group %>
+  <% end %>
+</div>
+
+<div class="but">
+<%= link_to "New Category", new_group_path %>
+</div>

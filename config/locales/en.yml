@@ -29,3 +29,8 @@
 
 en:
   hello: "Hello world"
+
+en:
+  jquery:
+    $: "jquery"
+    jQuery: "jquery"
