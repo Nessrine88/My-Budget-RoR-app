@@ -1,15 +1,18 @@
-<div id="<%= dom_id group %>" class=" d-flex align-items-center table-bordered mb-2 bg-white">
+<div id="<%= dom_id group %>" class=" p-4 d-flex align-items-center table-bordered mb-2 justify-content-between bg-white">
+    <div class="d-flex align-items-center">
+      <p class="pr-2 pl-2">
+        <%= link_to group_entities_path(group) do %>
+          <%= image_tag group.icon, alt: 'Group Icon', style: 'width: 70px; height: 70px;' %>
+        <% end %>
+      </p>
+      <p>
+      <%= link_to group.name, group_entities_path(group) %>
+    </p>
+    </div>
+
 <div>
-  <p class="pr-2 pl-2">
-    <%= link_to group_entities_path(group) do %>
-      <%= image_tag group.icon, alt: 'Group Icon', style: 'width: 50px; height: 50px;' %>
-    <% end %>
-  </p>
-  </div>
-  <div>
-  <p>
-  <%= link_to group.name, group_entities_path(group) %>
-</p>
+<% total_amount = group.entities.sum(&:amount) %>
+  <p><%= total_amount %>$</p>
 </div>
 </div>
 

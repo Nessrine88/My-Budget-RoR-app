@@ -6,14 +6,14 @@
 
   <% if @entities.any? %>
     <ul class="list-group">
-      <li class="table-bordered p-4" align="center">Total amount: <%=@total_amount%></li>
+      <li class="table-bordered p-4" align="center"><strong>Total amount: <%=@total_amount%></strong> $</li>
 
       <% @entities.each do |entity| %>
         <div class="d-flex justify-content-between mt-2 p-2 table-bordered list">
           <div>
             <li>
               <%= entity.name %>
-              <li> <%= entity.created_at %></li>
+              <li id="time"> <%= entity.created_at %></li>
             </li>
           </div>
           <li> <%= entity.amount %>$</li>

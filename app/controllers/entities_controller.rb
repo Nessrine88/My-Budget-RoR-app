@@ -41,4 +41,8 @@ class EntitiesController < ApplicationController
   def entity_params
     params.require(:entity).permit(:name, :amount, :group_id, :user_id)
   end
+
+  def total_amount(entities)
+    entities.sum(&:amount)
+  end
 end

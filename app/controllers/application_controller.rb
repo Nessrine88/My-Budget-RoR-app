@@ -11,10 +11,4 @@ class ApplicationController < ActionController::Base
       u.permit(:name, :email, :password, :current_password)
     end
   end
-
-  helper_method :total_amount
-
-  def total_amount(entities)
-    entities.sum(&:amount)
-  end
 end

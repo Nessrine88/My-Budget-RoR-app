@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  paginates_per 4
+  paginates_per 3
   belongs_to :user
   has_many :entities
 

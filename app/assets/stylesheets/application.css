@@ -1,3 +1,9 @@
+body {
+  background-color: #e7e7e7;
+  font-family: 'Proxima Vera Bold', sans-serif;
+  font-size: 24px;
+}
+
 .but {
   position: fixed;
   bottom: 0;
@@ -30,11 +36,6 @@
   animation: fadeIn 5s ease-in-out;
 }
 
-body {
-  background-color: #e7e7e7;
-  font-family: 'Proxima Vera Bold', sans-serif;
-}
-
 .list-group li {
   list-style: none;
   margin: 0;
@@ -55,7 +56,7 @@ body {
 
 .home {
   position: relative;
-  font-size: 4em;
+  font-size: 3.8em;
   color: #0e3742;
   text-transform: uppercase;
   width: 100%;
@@ -63,7 +64,7 @@ body {
   -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
   line-height: 0.7em;
   outline: none;
-  animation: animate 5s linear infinite;
+  animation: animate 100s ease infinite;
 }
 
 @keyframes animate {
@@ -101,4 +102,10 @@ h3 {
   cursor: pointer;
   color: white;
   font-size: 24px;
+}
+
+#time {
+  font-size: 16px;
+  font-style: italic;
+  color: #7a7a7a;
 }
