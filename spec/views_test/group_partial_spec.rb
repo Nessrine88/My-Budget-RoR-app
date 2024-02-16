@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.configure do |config|
     config.include FactoryBot::Syntax::Methods
     config.include Devise::Test::IntegrationHelpers, type: :feature
-  end
+end
 
 RSpec.describe 'groups/_group', type: :view do
   let(:group) { create(:group) }
