@@ -23,7 +23,7 @@ class EntitiesController < ApplicationController
     @entity.user_id = current_user.id
 
     if @entity.save
-      redirect_to group_entities_path(@group)'
+      redirect_to group_entities_path(@group)
     else
       render :new
     end
@@ -32,7 +32,7 @@ class EntitiesController < ApplicationController
   def destroy
     @entity = Entity.find(params[:id])
     @entity.destroy
-    redirect_to group_entities_path(@group), notice: 'Entity was successfully destroyed.'
+    redirect_to group_entities_path(@group)
   end
 
   private
