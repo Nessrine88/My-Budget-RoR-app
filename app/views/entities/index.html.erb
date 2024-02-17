@@ -1,17 +1,22 @@
 <div class="p-2 mt-4">
   <% if @entities.any? %>
     <ul class="list-group">
-      <li class="table-bordered p-4" align="center"><strong>Total amount: <%=@total_amount%></strong> $</li>
-
+      <li class="table-bordered pt-2 pb-2 pl-1 pr-1 d-flex justify-content-between">
+      <p class="nameE">
+      <strong>Total amount:
+      </p>
+      <p class="nameE">
+       <%=@total_amount%></strong> $</li>
+       </p>
       <% @entities.each do |entity| %>
         <div class="d-flex justify-content-between mt-2 p-2 table-bordered list">
           <div>
-            <li>
+            <li class="nameE">
               <%= entity.name %>
               <li id="time"> <%= entity.created_at %></li>
             </li>
           </div>
-          <li> <%= entity.amount %>$</li>
+          <li class="nameE"> <%= entity.amount %>$</li>
         </div>
       <% end %>
     </ul>

@@ -29,10 +29,6 @@ a {
   padding: 1rem 5rem;
 }
 
-.p-2 {
-  margin-bottom: 50px;
-}
-
 .list-group li {
   list-style: none;
   margin: 0;
@@ -53,6 +49,8 @@ a {
 
 h3 {
   color: white;
+  font-size: 36px;
+  font-family: 'proxima', sans-serif;
 }
 
 .navBar {
@@ -77,4 +75,14 @@ h3 {
   text-align: center;
   width: 100%;
   margin: auto;
+}
+
+#time {
+  color: #434b54;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.nameE {
+  font-size: 24px;
 }
