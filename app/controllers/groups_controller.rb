@@ -4,7 +4,6 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all.includes(:entities).page(params[:page])
-    @total_amount = total_amount(@entities)
   end
 
   def show; end
@@ -20,7 +19,7 @@ class GroupsController < ApplicationController
 
     respond_to do |format|
       if @group.save
-        format.html { redirect_to root_path }
+        format.html { redirect_to groups_path }
         format.json { render :show, status: :created, location: @group }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -58,11 +57,5 @@ class GroupsController < ApplicationController
 
   def group_params
     params.require(:group).permit(:name, :icon)
-  end
-
-  def total_amount(entities)
-    return 0 if entities.nil? || entities.empty?
-
-    entities.sum(&:amount)
   end
 end

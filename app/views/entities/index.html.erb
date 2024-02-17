@@ -1,9 +1,4 @@
 <div class="p-2 mt-4">
-  
-<%= link_to groups_path, class: "back-link" do %>
-  <i class="fas fa-arrow-left"></i> Back to Categories
-<% end %>
-
   <% if @entities.any? %>
     <ul class="list-group">
       <li class="table-bordered p-4" align="center"><strong>Total amount: <%=@total_amount%></strong> $</li>

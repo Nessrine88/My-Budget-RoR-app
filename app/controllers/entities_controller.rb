@@ -3,7 +3,8 @@ class EntitiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @entities = @group.entities.includes(:user).order(created_at: :desc).page(params[:page])
+    @entities = @group.entities.includes(:user).order(created_at: :desc)
+
     @total_amount = total_amount(@entities)
   end
 
@@ -17,8 +18,10 @@ class EntitiesController < ApplicationController
   end
 
   def create
+    @group = Group.find(params[:entity][:group_id])
     @entity = @group.entities.build(entity_params)
     @entity.user_id = current_user.id
+
     if @entity.save
       redirect_to group_entities_path(@group), notice: 'Entity was successfully created.'
     else

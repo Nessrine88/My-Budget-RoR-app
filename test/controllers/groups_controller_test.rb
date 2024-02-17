@@ -1,48 +1,61 @@
-require 'test_helper'
+class GroupsController < ApplicationController
+  before_action :set_group, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
-class GroupsControllerTest < ActionDispatch::IntegrationTest
-  setup do
-    @group = groups(:one)
+  def index
+    @groups = Group.all.includes(:entities).page(params[:page])
   end
 
-  test 'should get index' do
-    get groups_url
-    assert_response :success
+  def show; end
+
+  def new
+    @group = current_user.groups.build
   end
 
-  test 'should get new' do
-    get new_group_url
-    assert_response :success
-  end
+  def edit; end
 
-  test 'should create group' do
-    assert_difference('Group.count') do
-      post groups_url, params: { group: { icon: @group.icon, name: @group.name } }
+  def create
+    @group = current_user.groups.build(group_params)
+
+    respond_to do |format|
+      if @group.save
+        format.html { redirect_to root_path }
+        format.json { render :show, status: :created, location: @group }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @group.errors, status: :unprocessable_entity }
+      end
     end
-
-    assert_redirected_to group_url(Group.last)
   end
 
-  test 'should show group' do
-    get group_url(@group)
-    assert_response :success
-  end
-
-  test 'should get edit' do
-    get edit_group_url(@group)
-    assert_response :success
-  end
-
-  test 'should update group' do
-    patch group_url(@group), params: { group: { icon: @group.icon, name: @group.name } }
-    assert_redirected_to group_url(@group)
-  end
-
-  test 'should destroy group' do
-    assert_difference('Group.count', -1) do
-      delete group_url(@group)
+  def update
+    respond_to do |format|
+      if @group.update(group_params)
+        format.html { redirect_to group_url(@group) }
+        format.json { render :show, status: :ok, location: @group }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @group.errors, status: :unprocessable_entity }
+      end
     end
+  end
 
-    assert_redirected_to groups_url
+  def destroy
+    @group.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to groups_url }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def set_group
+    @group = Group.find(params[:id])
+  end
+
+  def group_params
+    params.require(:group).permit(:name, :icon)
   end
 end
