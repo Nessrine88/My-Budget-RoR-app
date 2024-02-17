@@ -23,7 +23,7 @@ class EntitiesController < ApplicationController
     @entity.user_id = current_user.id
 
     if @entity.save
-      redirect_to group_entities_path(@group), notice: 'Entity was successfully created.'
+      redirect_to group_entities_path(@group)'
     else
       render :new
     end
