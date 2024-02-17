@@ -51,7 +51,6 @@ gem 'bootsnap', require: false
 group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
-  gem 'kaminari'
   gem 'rspec-rails'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'debug', platforms: %i[mri windows]
@@ -80,6 +79,5 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'devise'
 
 gem 'cancancan'
-
 
 gem 'kaminari'
