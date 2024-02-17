@@ -1,5 +1,5 @@
 <div class="container mt-4">
-  <%= form_with(model: [@group, @entity], local: true) do |form| %>
+<%= form_with model: Entity.new, url: group_entities_path(@group), method: :post do |form| %>
     <% if @entity.errors.any? %>
       <div class="alert alert-danger">
         <h4><%= pluralize(@entity.errors.count, "error") %> prohibited this entity from being saved:</h4>
@@ -10,7 +10,10 @@
         </ul>
       </div>
     <% end %>
-
+    <div class="mb-3">
+    <%= form.label :group_id, "Select Group" %>
+    <%= form.collection_select :group_id, Group.all, :id, :name, prompt: "Select a group", class: "form-control" %>
+  </div>
     <div class="mb-3">
       <%= form.label :name, class: 'form-label' %>
       <%= form.text_field :name, class: 'form-control', required: true %>
@@ -22,7 +25,7 @@
     </div>
 
     <div class="but">
-      <%= form.submit "Create Entity", class: 'btn btn-primary' %>
+      <%= form.submit "Create Entity" %>
     </div>
   <% end %>
 </div>

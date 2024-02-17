@@ -1,7 +1,14 @@
+@font-face {
+  font-family: 'proxima';
+  src: url('/assets/proxima');
+}
+
 body {
-  background-color: #e7e7e7;
-  font-family: 'Proxima Vera Bold', sans-serif;
-  font-size: 24px;
+  font-family: 'proxima', sans-serif;
+}
+
+a {
+  color: #434b54;
 }
 
 .but {
@@ -22,18 +29,8 @@ body {
   padding: 1rem 5rem;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  animation: fadeIn 5s ease-in-out;
+.p-2 {
+  margin-bottom: 50px;
 }
 
 .list-group li {
@@ -54,34 +51,6 @@ body {
   padding: 1rem 5rem;
 }
 
-.home {
-  position: relative;
-  font-size: 3.8em;
-  color: #0e3742;
-  text-transform: uppercase;
-  width: 100%;
-  text-align: center;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
-  line-height: 0.7em;
-  outline: none;
-  animation: animate 100s ease infinite;
-}
-
-@keyframes animate {
-  0%,
-  18%,
-  20%,
-  50.1%,
-  60%,
-  65.1%,
-  80%,
-  90.1%,
-  92% {
-    color: #fff;
-    text-shadow: 0 0 10px #03bcf4, 0 0 20px #03bcf4, 0 0 40px #03bcf4, 0 0 80px #03bcf4, 0 0 160px #03bcf4;
-  }
-}
-
 h3 {
   color: white;
 }
@@ -95,7 +64,7 @@ h3 {
   background-color: transparent;
   color: #fff;
   border-color: #fff;
-  display: none; /* Hide the logout button initially */
+  display: none;
 }
 
 .menu-icon {
@@ -104,8 +73,8 @@ h3 {
   font-size: 24px;
 }
 
-#time {
-  font-size: 16px;
-  font-style: italic;
-  color: #7a7a7a;
+#centered {
+  text-align: center;
+  width: 100%;
+  margin: auto;
 }

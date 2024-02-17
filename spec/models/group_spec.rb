@@ -30,6 +30,6 @@ RSpec.describe Group, type: :model do
 
   it 'has many entities' do
     association = described_class.reflect_on_association(:entities)
-    expect(association.macro).to eq(:has_many)
+    expect(association.macro).to eq(:has_and_belongs_to_many)
   end
 end

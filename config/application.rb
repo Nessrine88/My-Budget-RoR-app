@@ -14,7 +14,7 @@ module Mysite
 config.assets.enabled = true
 config.assets.precompile += %w( global.css )
 
-
+config.assets.paths << Rails.root.join('app/assets/fonts')
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
