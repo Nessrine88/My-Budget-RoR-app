@@ -110,7 +110,7 @@ To run tests, run the following command:
 
 ### Deployment
 
-[E-Pocket](https://my-budget-ror-app.onrender.com/users/sign_up)
+[E-Pocket](https://my-budget-ror-app.onrender.com)
 <!--
 Example:
 
