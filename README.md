@@ -171,6 +171,6 @@ I would like to thank Microverse for giving me this project to build
 Special thanks to [Gregoire Vella](https://www.behance.net/gregoirevella) for their exceptional design work on the [Snapscan iOs Design and Branding](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=).
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](./LICENSE.md) licensed.
+This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
