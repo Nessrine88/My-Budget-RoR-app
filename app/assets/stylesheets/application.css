@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'proxima';
+  src: url('/assets/proxima');
+}
+
+body {
+  font-family: 'proxima', sans-serif;
+}
+
+a {
+  color: #434b54;
+}
+
+.but {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #5fb523;
+  padding: 2rem;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+}
+
+.but a {
+  color: white;
+  border: 1px solid white;
+  padding: 1rem 5rem;
+}
+
+.list-group li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+}
+
+.list {
+  background-color: #fff;
+}
+
+.but input {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 1rem 5rem;
+}
+
+h3 {
+  color: white;
+  font-size: 36px;
+  font-family: 'proxima', sans-serif;
+}
+
+.navBar {
+  background-color: #3778c2;
+  padding: 2rem;
+}
+
+.navBar button {
+  background-color: transparent;
+  color: #fff;
+  border-color: #fff;
+  display: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+}
+
+#centered {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+}
+
+#time {
+  color: #434b54;
+  font-style: italic;
+  font-size: 16px;
+}
+
+.nameE {
+  font-size: 24px;
+}

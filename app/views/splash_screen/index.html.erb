@@ -1,0 +1,16 @@
+<div class="container d-flex flex-column align-items-center mt-5">
+<div class="mb-4">
+  <h1 class="display-4">E-Pocket</h1>
+  <%= image_tag 'money-logo.webp', alt: 'Free Wallet', class: 'img-fluid' %>
+</div>
+
+
+    <form action="<%= new_user_session_path %>" method="get">
+    <button type="submit" class="btn text-white btn-lg btn-block m-2 mt-5" style="width:100vw;background-color: #3778c2;">Log In</button>
+    </form>
+    <div class= "text-gray ">
+    <%= link_to 'Sign Up', new_user_registration_path %>
+    </div>
+ 
+
+</div>

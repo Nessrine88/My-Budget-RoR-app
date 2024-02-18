@@ -1,0 +1,51 @@
+class EntitiesController < ApplicationController
+  before_action :set_group, only: %i[show index new create destroy]
+  before_action :authenticate_user!
+
+  def index
+    @entities = @group.entities.includes(:user).order(created_at: :desc)
+
+    @total_amount = total_amount(@entities)
+  end
+
+  def show
+    @entity = Entity.find(params[:id])
+  end
+
+  def new
+    @entity = @group.entities.build
+    @entity.user_id = current_user.id
+  end
+
+  def create
+    @group = Group.find(params[:entity][:group_id])
+    @entity = @group.entities.build(entity_params)
+    @entity.user_id = current_user.id
+
+    if @entity.save
+      redirect_to group_entities_path(@group)
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @entity = Entity.find(params[:id])
+    @entity.destroy
+    redirect_to group_entities_path(@group)
+  end
+
+  private
+
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
+
+  def entity_params
+    params.require(:entity).permit(:name, :amount, :group_id, :user_id)
+  end
+
+  def total_amount(entities)
+    entities.sum(&:amount)
+  end
+end

@@ -1,0 +1,31 @@
+<div class="p-2 mt-4">
+  <% if @entities.any? %>
+    <ul class="list-group">
+      <li class="table-bordered pt-2 pb-2 pl-1 pr-1 d-flex justify-content-between">
+      <p class="nameE">
+      <strong>Total amount:
+      </p>
+      <p class="nameE">
+       <%=@total_amount%></strong> $</li>
+       </p>
+      <% @entities.each do |entity| %>
+        <div class="d-flex justify-content-between mt-2 p-2 table-bordered list">
+          <div>
+            <li class="nameE">
+              <%= entity.name %>
+              <li id="time"> <%= entity.created_at %></li>
+            </li>
+          </div>
+          <li class="nameE"> <%= entity.amount %>$</li>
+        </div>
+      <% end %>
+    </ul>
+  <% else %>
+  <p style="color: #555;font-size:2em; font-style: italic; text-align: center; margin-top:5rem;">No entities in this group yet.</p>
+
+  <% end %>
+
+  <div class="but">
+    <%= link_to "Add New", new_group_entity_path(@group) %>
+  </div>
+</div>
