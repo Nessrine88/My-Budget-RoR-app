@@ -1,4 +1,4 @@
-<div class="pt-5">
+<div class="pt-5 m-5">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email", class: "form-control no-border" %>
@@ -15,8 +15,8 @@
     </div>
   <% end %>
 
-  <div class="actions">
-  <%= f.submit "Log in", class: "btn btn-block text-white but", style: "background-color: #3778c2;" %>
+  <div class="actions",style: "">
+  <%= f.submit "Log in", class: "btn btn-block text-white but p-2 fs-6", id: "loginBtn", style: "background-color: #3778c2;"%>
 
   </div>
 <% end %>

@@ -2,9 +2,15 @@
   font-family: 'proxima';
   src: url('/assets/proxima');
 }
+*{
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: 'proxima', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -85,4 +91,41 @@ h3 {
 
 .nameE {
   font-size: 24px;
+}
+.mb-4  {
+  height : 15rem;
+  width: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mb-4 h1 {
+  width: max-content;
+}
+.mb-4 img {
+  object-fit: fill;
+  width: 100%;
+  height: 100%;
+}
+.back-link {
+  display: none;
+}
+
+.pocketImg:hover {
+  filter: brightness(120%);
+}
+.pocketImg {
+  animation: fade 3s forwards;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
